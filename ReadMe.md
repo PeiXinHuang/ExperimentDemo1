@@ -40,7 +40,7 @@ using UnityEngine.UI;
 public class SenceChooseController : MonoBehaviour
 {
     //获取要跳转的场景名称
-    public string SenceName;
+    public string senceName;
     void Start()
     {
         //获取按钮后设置按钮点击执行函数OnButtonClick
@@ -51,7 +51,7 @@ public class SenceChooseController : MonoBehaviour
     void OnButtonClick()
     {
         //切换到SenceName场景
-        SceneManager.LoadScene(SenceName);
+        SceneManager.LoadScene(senceName);
     }
 }
 
@@ -59,5 +59,7 @@ public class SenceChooseController : MonoBehaviour
 
 演示效果
 
-![01](https://github.com/PeiXinHuang/ExperimentDemo/blob/master/ReadMeImage/01.gif)
+![01](ReadMeImage/01.gif)
+
+
 
