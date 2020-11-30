@@ -59,5 +59,5 @@ public class SenceChooseController : MonoBehaviour
 
 演示效果
 
-![01](ReadMeImage\01.gif)
+![01](https://github.com/PeiXinHuang/ExperimentDemo/blob/master/ReadMeImage/01.gif)
 
