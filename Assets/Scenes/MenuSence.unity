@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66c0f9c36262ce40a981e5ffee1c68e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SenceName: Ex1
+  senceName: Ex1
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66c0f9c36262ce40a981e5ffee1c68e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SenceName: Ex2
+  senceName: Ex2
 --- !u!1 &749661457
 GameObject:
   m_ObjectHideFlags: 0

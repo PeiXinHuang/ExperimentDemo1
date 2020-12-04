@@ -13,7 +13,7 @@ public class SenceChooseController : MonoBehaviour
 {
 
     //获取要跳转的场景名称
-    public string SenceName;
+    public string senceName;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +32,7 @@ public class SenceChooseController : MonoBehaviour
     void OnButtonClick()
     {
         //切换到SenceName场景
-        SceneManager.LoadScene(SenceName);
+        SceneManager.LoadScene(senceName);
 
     }
 }
