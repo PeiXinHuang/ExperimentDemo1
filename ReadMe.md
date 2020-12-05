@@ -17,6 +17,10 @@
 
 ---
 
+----
+
+
+
 
 
 ## 二、场景切换的实现
@@ -72,6 +76,10 @@ public class SenceChooseController : MonoBehaviour
 
 
 
+---
+
+
+
 ## 三、UI界面设计
 
 ### 1、UI界面自适应屏幕问题
@@ -82,3 +90,12 @@ public class SenceChooseController : MonoBehaviour
 效果如下
 ![01](ReadMeImage/gif/02.gif)
 
+
+
+
+
+## 四、Unty简单动画效果
+
+### 1、Unity加载Fbx模型及其动画
+
+参考教程[百度经验](https://jingyan.baidu.com/article/63f23628c043b24209ab3d04.html)
