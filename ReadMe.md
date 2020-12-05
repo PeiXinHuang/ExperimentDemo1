@@ -72,3 +72,13 @@ public class SenceChooseController : MonoBehaviour
 
 
 
+## 三、UI界面设计
+
+### 1、UI界面自适应屏幕问题
+
+- 将Canvas的Canvas Scaler组件中的UI Scale Mode改为Scale With Screen Size
+- 修改Canvas的子控件布局，设置子控件相对于屏幕某个地方的相对位置
+
+效果如下
+![01](ReadMeImage/gif/02.gif)
+
