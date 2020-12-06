@@ -10,17 +10,24 @@ public class SenceController : MonoBehaviour
 {
 
 
-    public GameObject purpose;  //目的与要求界面
-    public GameObject exSteps; //实验步骤面板
+    public GameObject purposeMenu;  //目的与要求界面
+    public GameObject exStepsMenu; //实验步骤面板
+    public GameObject StepdDeatailsPanel1; //步骤一详情面板
+    public GameObject StepdDeatailsPanel2; //步骤二详情面板
+    public GameObject StepdDeatailsPanel3; //步骤三详情面板
+    public GameObject StepdDeatailsPanel4; //步骤四详情面板
+
 
     private GameObject pineRoot; //树根模型
+    private GameObject pineFruit; //松果模型
 
     // Start is called before the first frame update
     void Start()
     {
-        string pineRootPath = "pineRoot";
+        string pineRootPath = "pineRootPrefab";
         pineRoot = (GameObject)Instantiate(Resources.Load(pineRootPath)); //加载树根模型
-
+        string pineFruitPath = "pineFruitPrefab";
+        pineFruit = (GameObject)Instantiate(Resources.Load(pineFruitPath)); //加载松果模型
         ReStartExOne();
     }
 
@@ -30,75 +37,91 @@ public class SenceController : MonoBehaviour
         
     }
 
-    // 开始实验
+    // 开始实验，开始实验时默认进入步骤一
     public void StartExOne()
     {
-        HidePurpose();
-        ShowExSteps();
         ShowExOneStep1();
     }
 
-    // 重新开始实验
+    // 重新开始实验，回到目的与要求界面
     public void ReStartExOne()
     {
-        ShowPurpose();
-        HideExSteps();
+        ResetSence();
+        purposeMenu.SetActive(true);
+    }
+
+    //重置掉场景中的所有物体
+    public void ResetSence()
+    {
+        // 隐藏菜单面板
+        purposeMenu.SetActive(false);
+        exStepsMenu.SetActive(false);
+        
+
+        //隐藏所有详情面板
+        StepdDeatailsPanel1.SetActive(false);
+        StepdDeatailsPanel2.SetActive(false);
+        StepdDeatailsPanel3.SetActive(false);
+        StepdDeatailsPanel4.SetActive(false);
+
+        //隐藏模型
         pineRoot.SetActive(false);
+        pineFruit.SetActive(false);
     }
 
-    
 
-    //显示目的与要求界面
-    private void ShowPurpose()
-    {
-        purpose.SetActive(true);
-    }
-
-    //隐藏目的与要求界面
-    private void HidePurpose()
-    {
-        purpose.SetActive(false);
-    }
-
-    //显示实验步骤面板
-    private void ShowExSteps()
-    {
-        exSteps.SetActive(true);
-    }
-
-    //隐藏实验步骤面板
-    public void HideExSteps()
-    {
-        exSteps.SetActive(false);
-    }
-
-    //显示步骤一
+    //显示步骤一模型
     public void ShowExOneStep1()
     {
-
+        ResetSence();
+        exStepsMenu.SetActive(true);
         pineRoot.SetActive(true);
-
-
     }
 
-    //显示步骤二
+    //显示步骤二模型
     public void ShowExOneStep2()
     {
-        
-        pineRoot.SetActive(false);
-        
+        ResetSence();
+        exStepsMenu.SetActive(true);
+        pineFruit.SetActive(true);
     }
 
-    //显示步骤三
+    //显示步骤三模型
     public void ShowExOneStep3()
     {
-        pineRoot.SetActive(false);
+        ResetSence();
+        exStepsMenu.SetActive(true);
     }
 
-    //显示步骤四
+    //显示步骤四模型
     public void ShowExOneStep4()
     {
-        pineRoot.SetActive(false);
+        ResetSence();
+        exStepsMenu.SetActive(true);
+      
     }
 
+    //显示详情一面板
+    public void ShowStepDetailsPanel1()
+    {
+        StepdDeatailsPanel1.SetActive(true);
+    }
+
+    //显示详情二面板
+    public void ShowStepDetailsPanel2()
+    {
+        StepdDeatailsPanel2.SetActive(true);
+    }
+
+    //显示详情三面板
+    public void ShowStepDetailsPanel3()
+    {
+        StepdDeatailsPanel3.SetActive(true);
+    }
+
+    //显示详情四面板
+    public void ShowStepDetailsPanel4()
+    {
+        StepdDeatailsPanel4.SetActive(true);
+    }
 }
