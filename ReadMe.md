@@ -91,10 +91,21 @@ public class SenceChooseController : MonoBehaviour
 
 
 
-
+---
 
 ## 四、Unty简单动画效果
 
 ### 1、Unity加载Fbx模型及其动画
 
 参考教程[百度经验](https://jingyan.baidu.com/article/63f23628c043b24209ab3d04.html)
+
+### 2、添加脚本实现模型不停旋转效果
+
+```c#
+public int rotateSpeed = 0; //旋转速度，默认为0
+this.transform.Rotate(Vector3.up * rotateSpeed); //绕上方轴旋转
+```
+
+实现效果：
+
+![03](ReadMeImage/gif/03.gif)
