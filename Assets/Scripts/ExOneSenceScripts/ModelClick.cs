@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 
 /*
-*  模型点击脚本，模型点击时,根据当前步骤，显示步骤详情面板    
+*  模型点击脚本，模型点击时,根据当前步骤，点击显示步骤详情面板,再次点击，隐藏详情面板
 */
 public class ModelClick : MonoBehaviour
 {
@@ -19,6 +19,8 @@ public class ModelClick : MonoBehaviour
     };
 
     public StepDetailNum currentStep; //当前详情面板
+
+   
 
     // Start is called before the first frame update
     void Start()
@@ -35,23 +37,22 @@ public class ModelClick : MonoBehaviour
     //点击模型显示详情面板
     private void OnMouseDown()
     {
-
+       
         switch (currentStep)
         {
             case StepDetailNum.Step1:
-                GameObject.Find("SenceController").GetComponent<SenceController>().ShowStepDetailsPanel1();
+                GameObject.Find("SenceController").GetComponent<SenceController>().SetStepDetailsPanel1();
                 break;
             case StepDetailNum.Step2:
-                GameObject.Find("SenceController").GetComponent<SenceController>().ShowStepDetailsPanel2();
+                GameObject.Find("SenceController").GetComponent<SenceController>().SetStepDetailsPanel2();
                 break;
             case StepDetailNum.Step3:
-                GameObject.Find("SenceController").GetComponent<SenceController>().ShowStepDetailsPanel3();
+                GameObject.Find("SenceController").GetComponent<SenceController>().SetStepDetailsPanel3();
                 break;
             case StepDetailNum.Step4:
-                GameObject.Find("SenceController").GetComponent<SenceController>().ShowStepDetailsPanel4();
+                GameObject.Find("SenceController").GetComponent<SenceController>().SetStepDetailsPanel4();
                 break;
         }
-       
-
+      
     }
 }

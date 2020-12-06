@@ -101,27 +101,57 @@ public class SenceController : MonoBehaviour
       
     }
 
-    //显示详情一面板
-    public void ShowStepDetailsPanel1()
+    //设置详情一面板，如果已经显示面板，那么就隐藏，否之即反
+    public void SetStepDetailsPanel1()
     {
-        StepdDeatailsPanel1.SetActive(true);
+        if (StepdDeatailsPanel1.activeInHierarchy)
+        {
+            StepdDeatailsPanel1.SetActive(false);
+        }
+        else
+        {
+            StepdDeatailsPanel1.SetActive(true);
+        }
     }
 
-    //显示详情二面板
-    public void ShowStepDetailsPanel2()
+    //设置详情二面板，如果已经显示面板，那么就隐藏，否之即反
+    public void SetStepDetailsPanel2()
     {
-        StepdDeatailsPanel2.SetActive(true);
+        if (StepdDeatailsPanel2.activeInHierarchy)
+        {
+            StepdDeatailsPanel2.SetActive(false);
+        }
+        else
+        {
+            StepdDeatailsPanel2.SetActive(true);
+        }
     }
 
-    //显示详情三面板
-    public void ShowStepDetailsPanel3()
+    //设置详情三面板，如果已经显示面板，那么就隐藏，否之即反
+    public void SetStepDetailsPanel3()
     {
-        StepdDeatailsPanel3.SetActive(true);
+        if (StepdDeatailsPanel3.activeInHierarchy)
+        {
+            StepdDeatailsPanel3.SetActive(false);
+        }
+        else
+        {
+            StepdDeatailsPanel3.SetActive(true);
+        }
     }
 
-    //显示详情四面板
-    public void ShowStepDetailsPanel4()
+    //设置详情四面板，如果已经显示面板，那么就隐藏，否之即反
+    public void SetStepDetailsPanel4()
     {
-        StepdDeatailsPanel4.SetActive(true);
+        if (StepdDeatailsPanel4.activeInHierarchy)
+        {
+            StepdDeatailsPanel4.SetActive(false);
+        }
+        else
+        {
+            StepdDeatailsPanel4.SetActive(true);
+        }
     }
+
+
 }
