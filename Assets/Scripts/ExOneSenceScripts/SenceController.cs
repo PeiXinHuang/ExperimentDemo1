@@ -83,7 +83,7 @@ public class SenceController : MonoBehaviour
     {
         ResetSence();
         exStepsMenu.SetActive(true);
-        pineFruit.SetActive(true);
+        
     }
 
     //显示步骤三模型
@@ -91,6 +91,7 @@ public class SenceController : MonoBehaviour
     {
         ResetSence();
         exStepsMenu.SetActive(true);
+       
     }
 
     //显示步骤四模型
@@ -98,7 +99,7 @@ public class SenceController : MonoBehaviour
     {
         ResetSence();
         exStepsMenu.SetActive(true);
-      
+        pineFruit.SetActive(true);
     }
 
     //设置详情一面板，如果已经显示面板，那么就隐藏，否之即反
