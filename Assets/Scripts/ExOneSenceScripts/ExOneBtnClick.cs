@@ -40,21 +40,21 @@ public class ExOneBtnClick : MonoBehaviour
         switch (btnNum)
         {
             case BtnNum.StepOne:
-                GameObject.Find("SenceController").GetComponent<SenceController>().ShowExOneStep1();
+                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().ShowExOneStep1();
                 break;
             case BtnNum.StepTwo:
-                GameObject.Find("SenceController").GetComponent<SenceController>().ShowExOneStep2();
+                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().ShowExOneStep2();
                 break;
             case BtnNum.StepThree:
-                GameObject.Find("SenceController").GetComponent<SenceController>().ShowExOneStep3();
+                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().ShowExOneStep3();
                 break;
             case BtnNum.StepFour:
-                GameObject.Find("SenceController").GetComponent<SenceController>().ShowExOneStep4();
+                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().ShowExOneStep4();
                 break;
             case BtnNum.Start:
-                GameObject.Find("SenceController").GetComponent<SenceController>().StartExOne();                break;
+                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().StartExOne();                break;
             case BtnNum.ReStart:
-                GameObject.Find("SenceController").GetComponent<SenceController>().ReStartExOne();
+                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().ReStartExOne();
                 break;
         }
     }

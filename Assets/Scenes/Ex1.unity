@@ -3085,7 +3085,7 @@ GameObject:
   - component: {fileID: 1692724161}
   - component: {fileID: 1692724162}
   m_Layer: 0
-  m_Name: SenceController
+  m_Name: SenceOneController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

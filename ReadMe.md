@@ -11,9 +11,15 @@
 ![02](ReadMeImage/image/02.png)
 ![03](ReadMeImage/image/03.png)
 
+### 2、实验二 探究串联电路中电压的规律
 
+![01](ReadMeImage/image/04.png)
 
+![01](ReadMeImage/image/05.png)
 
+![01](ReadMeImage/image/06.png)
+
+![01](ReadMeImage/image/07.png)
 
 ---
 
@@ -174,3 +180,71 @@ this.transform.Rotate(Vector3.up * rotateSpeed); //绕上方轴旋转
 实现效果
 
 ![04](ReadMeImage/gif/04.gif)
+
+
+
+
+
+---
+
+## 六、Unity中物体的属性设置
+
+### 1、给物体增加弹力 
+ [简书](https://www.jianshu.com/p/5bf073d20298)
+
+### 2、在某个位置创建物体
+
+```c#
+Instantiate(gameObject, position, gameobject.transform.rotation); 
+```
+
+### 3、鼠标拖拽模型的实现
+
+参考教程： [unity3D物体跟着鼠标移动](https://blog.csdn.net/qq_34735841/article/details/101012513)
+
+实现过程
+
+1. 创建一个Cube，一个地面，设置好大小
+
+2. 为Cube添加Rigidbody组件（可以在Rigidbod组件上禁止物体的旋转）
+
+3. 设置拖拽代码到Cube上面
+
+   ```C#
+   private bool isDrag = false; //是否开始移动物体
+   
+   void Update()
+   {
+       if (isDrag)
+       {
+           //获取需要移动物体的世界转屏幕坐标
+           Vector3 screenPos = Camera.main.WorldToScreenPoint(this.transform.position);
+           //获取鼠标位置
+           Vector3 mousePos = Input.mousePosition;
+           //因为鼠标只有X，Y轴，所以要赋予给鼠标Z轴
+           mousePos.z = screenPos.z;
+           //把鼠标的屏幕坐标转换成世界坐标
+           Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+   
+           //防止物体移动到地面下方,模型坐标轴应该在物体中心
+           if (worldPos.y < transform.localScale.y/2.0f) worldPos.y = transform.localScale.y / 2.0f;
+           //控制物体移动
+           transform.position = worldPos;
+       }
+   }
+   private void OnMouseDown()
+   {
+       isDrag = true;
+   
+   }
+   private void OnMouseUp()
+   {
+       isDrag = false;
+   }
+   ```
+
+   
+
+实现效果：
+
+![05](ReadMeImage/gif/05.gif)

@@ -37,20 +37,22 @@ public class ModelClick : MonoBehaviour
     //点击模型显示详情面板
     private void OnMouseDown()
     {
-       
+
+        this.transform.Rotate(Vector3.up * 5.0f*Time.deltaTime);
+
         switch (currentStep)
         {
             case StepDetailNum.Step1:
-                GameObject.Find("SenceController").GetComponent<SenceController>().SetStepDetailsPanel1();
+                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().SetStepDetailsPanel1();
                 break;
             case StepDetailNum.Step2:
-                GameObject.Find("SenceController").GetComponent<SenceController>().SetStepDetailsPanel2();
+                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().SetStepDetailsPanel2();
                 break;
             case StepDetailNum.Step3:
-                GameObject.Find("SenceController").GetComponent<SenceController>().SetStepDetailsPanel3();
+                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().SetStepDetailsPanel3();
                 break;
             case StepDetailNum.Step4:
-                GameObject.Find("SenceController").GetComponent<SenceController>().SetStepDetailsPanel4();
+                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().SetStepDetailsPanel4();
                 break;
         }
       

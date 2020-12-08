@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * 场景控制器：控制场景中物体的显示，以及实验进度
+ * 场景一控制器：控制场景中物体的显示，以及实验进度
  */
 
-public class SenceController : MonoBehaviour
+public class ExOneSenceController : MonoBehaviour
 {
 
 
