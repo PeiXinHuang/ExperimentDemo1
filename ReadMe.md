@@ -248,3 +248,9 @@ Instantiate(gameObject, position, gameobject.transform.rotation);
 实现效果：
 
 ![05](ReadMeImage/gif/05.gif)
+
+
+
+### 4、导线制作
+
+参考教程：[贝塞尔曲线 unity两点画曲线弧线三点](https://blog.csdn.net/xiehailiang_/article/details/105798986)
