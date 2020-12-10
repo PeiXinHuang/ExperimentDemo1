@@ -6,7 +6,7 @@ using UnityEngine.UI;
 /*
  * 实验一按钮点击响应脚本，需要传入按钮，按钮点击后，根据按钮调用场景控制器里面的函数 
  */
-public class ExOneBtnClick : MonoBehaviour
+public class BtnClick : MonoBehaviour
 {
 
     public enum BtnNum
@@ -40,21 +40,21 @@ public class ExOneBtnClick : MonoBehaviour
         switch (btnNum)
         {
             case BtnNum.StepOne:
-                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().ShowExOneStep1();
+                GameObject.Find("SenceController").GetComponent<SenceController>().ShowExOneStep1();
                 break;
             case BtnNum.StepTwo:
-                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().ShowExOneStep2();
+                GameObject.Find("SenceController").GetComponent<SenceController>().ShowExOneStep2();
                 break;
             case BtnNum.StepThree:
-                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().ShowExOneStep3();
+                GameObject.Find("SenceController").GetComponent<SenceController>().ShowExOneStep3();
                 break;
             case BtnNum.StepFour:
-                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().ShowExOneStep4();
+                GameObject.Find("SenceController").GetComponent<SenceController>().ShowExOneStep4();
                 break;
             case BtnNum.Start:
-                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().StartExOne();                break;
+                GameObject.Find("SenceController").GetComponent<SenceController>().StartExOne();                break;
             case BtnNum.ReStart:
-                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().ReStartExOne();
+                GameObject.Find("SenceController").GetComponent<SenceController>().ReStartExOne();
                 break;
         }
     }

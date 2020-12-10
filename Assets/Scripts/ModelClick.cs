@@ -43,16 +43,16 @@ public class ModelClick : MonoBehaviour
         switch (currentStep)
         {
             case StepDetailNum.Step1:
-                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().SetStepDetailsPanel1();
+                GameObject.Find("SenceController").GetComponent<SenceController>().SetStepDetailsPanel1();
                 break;
             case StepDetailNum.Step2:
-                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().SetStepDetailsPanel2();
+                GameObject.Find("SenceController").GetComponent<SenceController>().SetStepDetailsPanel2();
                 break;
             case StepDetailNum.Step3:
-                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().SetStepDetailsPanel3();
+                GameObject.Find("SenceController").GetComponent<SenceController>().SetStepDetailsPanel3();
                 break;
             case StepDetailNum.Step4:
-                GameObject.Find("SenceOneController").GetComponent<ExOneSenceController>().SetStepDetailsPanel4();
+                GameObject.Find("SenceController").GetComponent<SenceController>().SetStepDetailsPanel4();
                 break;
         }
       
