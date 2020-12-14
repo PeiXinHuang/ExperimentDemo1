@@ -89,6 +89,12 @@ public class SenceChooseController : MonoBehaviour
 
 
 
+## 2、UI动画设计
+
+参考教程：[Unity 简单动画（帧动画，Animation，Tween）](https://www.jianshu.com/p/3677214564c9)
+
+
+
 ---
 
 ## 四、Unty简单动画效果
@@ -108,9 +114,22 @@ this.transform.Rotate(Vector3.up * rotateSpeed); //绕上方轴旋转
 
 ![03](ReadMeImage/gif/03.gif)
 
+### 3、使用leanTween脚本制作动画
 
+1. 在Asset Store下载leanTween之后，导入到项目文件当中
 
+2. 书写动画代码，附加到UI上面
 
+   ```c#
+   //3个参数1.变换的物体，2变化内容，3.时间
+   LeanTween.scale(this.gameObject, new Vector3(1, 2, 1), 0.5f);
+   LeanTween.rotate(this.gameObject, new Vector3(0, 90, 90), 0.5f);
+   LeanTween.move(this.gameObject, new Vector3(0, 2, 2), 0.5f);
+   ```
+
+   实现效果
+
+![05](ReadMeImage/gif/05.gif)
 
 
 

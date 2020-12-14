@@ -20,15 +20,20 @@ public class SenceController : MonoBehaviour
 
     private GameObject pineRoot; //树根模型
     private GameObject pineFruit; //松果模型
+    private GameObject microscope; //显微镜模型
+    private GameObject pineFree; //松叶模型
 
     // Start is called before the first frame update
     void Start()
     {
-        string pineRootPath = "pineRootPrefab";
-        pineRoot = (GameObject)Instantiate(Resources.Load(pineRootPath)); //加载树根模型
-        string pineFruitPath = "pineFruitPrefab";
-        pineFruit = (GameObject)Instantiate(Resources.Load(pineFruitPath)); //加载松果模型
+
+        pineRoot = (GameObject)Instantiate(Resources.Load("pineRootPrefab")); //加载树根模型
+        pineFruit = (GameObject)Instantiate(Resources.Load("pineFruitPrefab")); //加载松果模型
+        microscope = (GameObject)Instantiate(Resources.Load("microscopePrefab")); //加载显微镜模型
+        pineFree = (GameObject)Instantiate(Resources.Load("pineLeafPrefab")); //加载松叶模型
+
         ReStartExOne();
+
     }
 
     // Update is called once per frame
@@ -67,6 +72,8 @@ public class SenceController : MonoBehaviour
         //隐藏模型
         pineRoot.SetActive(false);
         pineFruit.SetActive(false);
+        pineFree.SetActive(false);
+        microscope.SetActive(false);
     }
 
 
@@ -82,6 +89,7 @@ public class SenceController : MonoBehaviour
     public void ShowExOneStep2()
     {
         ResetSence();
+        pineFree.SetActive(true);
         exStepsMenu.SetActive(true);
         
     }
@@ -90,6 +98,7 @@ public class SenceController : MonoBehaviour
     public void ShowExOneStep3()
     {
         ResetSence();
+        microscope.SetActive(true);
         exStepsMenu.SetActive(true);
        
     }
@@ -107,11 +116,14 @@ public class SenceController : MonoBehaviour
     {
         if (StepDeatailsPanel1.activeInHierarchy)
         {
+            
             StepDeatailsPanel1.SetActive(false);
         }
         else
         {
             StepDeatailsPanel1.SetActive(true);
+           
+            
         }
     }
 

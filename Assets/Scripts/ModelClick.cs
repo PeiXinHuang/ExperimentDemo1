@@ -38,7 +38,7 @@ public class ModelClick : MonoBehaviour
     private void OnMouseDown()
     {
 
-        this.transform.Rotate(Vector3.up * 5.0f*Time.deltaTime);
+        
 
         switch (currentStep)
         {

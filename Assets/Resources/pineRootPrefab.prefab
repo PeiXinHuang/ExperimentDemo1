@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 6281648021087952375}
   - component: {fileID: 6281648021085085143}
   - component: {fileID: 6281648021086052119}
-  - component: {fileID: 6281648021078635031}
-  - component: {fileID: 6281648021088077689}
   - component: {fileID: 3042163421136032685}
   - component: {fileID: 3217983715384615941}
   m_Layer: 0
@@ -81,38 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &6281648021078635031
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6281648021087977943}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 7f21e17a66502cc43ab079a775b894b1, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6281648021088077689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6281648021087977943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce4742bab783bcc4aabdeb43eccc767a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 0
 --- !u!114 &3042163421136032685
 MonoBehaviour:
   m_ObjectHideFlags: 0

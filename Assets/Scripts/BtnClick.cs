@@ -52,7 +52,8 @@ public class BtnClick : MonoBehaviour
                 GameObject.Find("SenceController").GetComponent<SenceController>().ShowExOneStep4();
                 break;
             case BtnNum.Start:
-                GameObject.Find("SenceController").GetComponent<SenceController>().StartExOne();                break;
+                GameObject.Find("SenceController").GetComponent<SenceController>().StartExOne();
+                break;
             case BtnNum.ReStart:
                 GameObject.Find("SenceController").GetComponent<SenceController>().ReStartExOne();
                 break;

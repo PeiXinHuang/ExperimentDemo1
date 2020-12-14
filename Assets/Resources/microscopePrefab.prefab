@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6676375491693519088}
   - component: {fileID: 6676375491696419024}
   - component: {fileID: 6676375491695419920}
-  - component: {fileID: 114151035650442188}
+  - component: {fileID: 65543833362735080}
+  - component: {fileID: 114975733862949656}
   m_Layer: 0
-  m_Name: microscope
+  m_Name: microscopePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +79,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &114151035650442188
+--- !u!65 &65543833362735080
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676375491693493456}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9203541, y: 5.6174784, z: 4.306729}
+  m_Center: {x: 0, y: 0.44952643, z: 0}
+--- !u!114 &114975733862949656
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,7 +101,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6676375491693493456}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce4742bab783bcc4aabdeb43eccc767a, type: 3}
+  m_Script: {fileID: 11500000, guid: f9bdc810aaa489341b71f119f4ed4e59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 2
+  currentStep: 2
