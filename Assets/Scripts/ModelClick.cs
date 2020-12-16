@@ -18,6 +18,10 @@ public class ModelClick : MonoBehaviour
         Step4
     };
 
+   
+
+
+
     public StepDetailNum currentStep; //当前详情面板
 
    
@@ -47,6 +51,7 @@ public class ModelClick : MonoBehaviour
                 break;
             case StepDetailNum.Step2:
                 GameObject.Find("SenceController").GetComponent<SenceController>().SetStepDetailsPanel2();
+               
                 break;
             case StepDetailNum.Step3:
                 GameObject.Find("SenceController").GetComponent<SenceController>().SetStepDetailsPanel3();
@@ -57,4 +62,11 @@ public class ModelClick : MonoBehaviour
         }
       
     }
+
+    private void OnMouseUp()
+    {
+        
+    }
+
+
 }

@@ -16,7 +16,11 @@ public class BtnClick : MonoBehaviour
         StepThree,
         StepFour,
         ReStart,
-        Start
+        Start,
+        Locate,
+        ShowEx,
+        SetMicroscope,
+        GetNote
     };
 
     public BtnNum btnNum;//获取按钮步骤号
@@ -56,6 +60,18 @@ public class BtnClick : MonoBehaviour
                 break;
             case BtnNum.ReStart:
                 GameObject.Find("SenceController").GetComponent<SenceController>().ReStartExOne();
+                break;
+            case BtnNum.Locate:
+                GameObject.Find("SenceController").GetComponent<SenceController>().ResetCamera();
+                break;
+            case BtnNum.ShowEx:
+                GameObject.Find("SenceController").GetComponent<SenceController>().SetExStepsMenu();
+                break;
+            case BtnNum.SetMicroscope:
+                GameObject.Find("SenceController").GetComponent<SenceController>().SetMicroscope();
+                break;
+            case BtnNum.GetNote:
+                GameObject.Find("SenceController").GetComponent<SenceController>().GetNote();
                 break;
         }
     }
