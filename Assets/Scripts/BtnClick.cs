@@ -22,7 +22,8 @@ public class BtnClick : MonoBehaviour
         SetMicroscope,
         GetNote,
         Guide,
-        CloseGuide
+        CloseGuide,
+        CloseApp
     };
 
     public BtnNum btnNum;//获取按钮步骤号
@@ -80,6 +81,9 @@ public class BtnClick : MonoBehaviour
                 break;
             case BtnNum.CloseGuide:
                 GameObject.Find("SenceController").GetComponent<SenceController>().CloseGuidePanel();
+                break;
+            case BtnNum.CloseApp:
+                Application.Quit();
                 break;
         }
     }
