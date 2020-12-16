@@ -20,7 +20,9 @@ public class BtnClick : MonoBehaviour
         Locate,
         ShowEx,
         SetMicroscope,
-        GetNote
+        GetNote,
+        Guide,
+        CloseGuide
     };
 
     public BtnNum btnNum;//获取按钮步骤号
@@ -72,6 +74,12 @@ public class BtnClick : MonoBehaviour
                 break;
             case BtnNum.GetNote:
                 GameObject.Find("SenceController").GetComponent<SenceController>().GetNote();
+                break;
+            case BtnNum.Guide:
+                GameObject.Find("SenceController").GetComponent<SenceController>().SetGuidePanel();
+                break;
+            case BtnNum.CloseGuide:
+                GameObject.Find("SenceController").GetComponent<SenceController>().CloseGuidePanel();
                 break;
         }
     }

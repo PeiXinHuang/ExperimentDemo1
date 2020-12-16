@@ -18,7 +18,7 @@ public class SenceController : MonoBehaviour
     public GameObject StepDeatailsPanel2; //步骤二详情面板
     public GameObject StepDeatailsPanel3; //步骤三详情面板
     public GameObject StepDeatailsPanel4; //步骤四详情面板
-
+    public GameObject guide; //索引面板
 
      
 
@@ -337,5 +337,27 @@ public class SenceController : MonoBehaviour
             note.SetActive(true);
             
         }
+    }
+
+    //设置索引面板
+    public void SetGuidePanel()
+    {
+        if (!guide.activeInHierarchy)
+        {
+            guide.SetActive(true);
+            Button btn = guide.transform.GetChild(0).GetComponent<Button>();
+            btn.Select();
+        }
+        
+    }
+    //关闭索引面板
+    public void CloseGuidePanel()
+    {
+        if (guide.activeInHierarchy)
+        {
+            guide.SetActive(false);
+        }
+       
+    
     }
 }
