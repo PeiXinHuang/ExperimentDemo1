@@ -19,7 +19,7 @@ public class SenceController : MonoBehaviour
     public GameObject StepDeatailsPanel3; //步骤三详情面板
     public GameObject StepDeatailsPanel4; //步骤四详情面板
     public GameObject guide; //索引面板
-
+    public GameObject video; //video面板
      
 
     private GameObject pineRoot; //树根模型
@@ -71,8 +71,13 @@ public class SenceController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+            if (video.activeInHierarchy)
+            {
+                ChangeVideoSlider();
+            }
     }
+
+   
 
     // 开始实验，开始实验时默认进入步骤一
     public void StartExOne()
@@ -347,6 +352,7 @@ public class SenceController : MonoBehaviour
             guide.SetActive(true);
             Button btn = guide.transform.GetChild(0).GetComponent<Button>();
             btn.Select();
+            CloseVideo();
         }
         
     }
@@ -360,4 +366,58 @@ public class SenceController : MonoBehaviour
        
     
     }
+
+    //显示视频
+    public void ShowVideo()
+    {
+        if (!video.activeInHierarchy)
+        {
+            video.SetActive(true);
+            CloseGuidePanel();
+            
+        }
+       
+    }
+
+    //设置视频暂停播放
+    public void SetVideo()
+    {
+        if(video.transform.GetChild(0).GetComponent<UnityEngine.Video.VideoPlayer>().isPaused)
+        {
+            video.transform.GetChild(0).GetComponent<UnityEngine.Video.VideoPlayer>().Play();
+            video.transform.GetChild(1).GetChild(1).GetChild(0).gameObject.SetActive(false);
+            video.transform.GetChild(1).GetChild(1).GetChild(1).gameObject.SetActive(true);
+          
+         
+        }
+            
+        else
+        {
+            video.transform.GetChild(1).GetChild(1).GetChild(0).gameObject.SetActive(true);
+            video.transform.GetChild(1).GetChild(1).GetChild(1).gameObject.SetActive(false);
+            video.transform.GetChild(0).GetComponent<UnityEngine.Video.VideoPlayer>().Pause();
+        }
+           
+    }
+
+    //改变视频进度
+    public void ChangeVideoSlider()
+    {
+        Slider slider = video.transform.GetChild(1).transform.GetChild(2).GetComponent<Slider>();
+        UnityEngine.Video.VideoPlayer v = video.transform.GetChild(0).GetComponent<UnityEngine.Video.VideoPlayer>();
+      
+            slider.value = (float)(v.time / v.clip.length);
+     
+    }
+
+    //关闭视频
+
+    public void CloseVideo()
+    {
+        if (video.activeInHierarchy)
+        {
+            video.SetActive(false);
+        }
+    }
+
 }

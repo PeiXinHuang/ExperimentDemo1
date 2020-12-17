@@ -23,7 +23,10 @@ public class BtnClick : MonoBehaviour
         GetNote,
         Guide,
         CloseGuide,
-        CloseApp
+        CloseApp,
+        ShowVideo,
+        SetVideo,
+        CloseVideo
     };
 
     public BtnNum btnNum;//获取按钮步骤号
@@ -84,6 +87,15 @@ public class BtnClick : MonoBehaviour
                 break;
             case BtnNum.CloseApp:
                 Application.Quit();
+                break;
+            case BtnNum.ShowVideo:
+                GameObject.Find("SenceController").GetComponent<SenceController>().ShowVideo();
+                break;
+            case BtnNum.SetVideo:
+                GameObject.Find("SenceController").GetComponent<SenceController>().SetVideo();
+                break;
+            case BtnNum.CloseVideo:
+                GameObject.Find("SenceController").GetComponent<SenceController>().CloseVideo();
                 break;
         }
     }
