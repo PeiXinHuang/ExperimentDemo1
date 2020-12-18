@@ -89,9 +89,14 @@ public class SenceChooseController : MonoBehaviour
 
 
 
-## 2、UI动画设计
 
-参考教程：[Unity 简单动画（帧动画，Animation，Tween）](https://www.jianshu.com/p/3677214564c9)
+
+### 2、Tag面板制作
+
+1. 创建多个按钮和多个重叠的的Panel面板，并且每个按钮对应一个面板
+2. 按钮点击就将对应的面板移动到最前面，并且高亮显示按钮
+3. 实现效果
+![09](ReadMeImage/gif/09.gif)
 
 
 
@@ -145,35 +150,51 @@ this.transform.Rotate(Vector3.up * rotateSpeed); //绕上方轴旋转
 
 ```c#
 
+    
+public class CameraController: MonoBehaviour
+{
+
     //移动旋转缩放速度
     public float translateSpeed = 5.0f;
     public float rotateSpeed = 5.0f;
-    public float zoomSpeed = 0.5f；
+    public float zoomSpeed = 0.5f;
 
-    private void cameraRotate() //摄像机右键旋转
+
+    private void Update()
     {
-       
+        cameraTranslate();
+        cameraRotate();
+        cameraZoom();
+    }
+
+
+    private void cameraTranslate() //摄像机右键旋转
+    {
+      
         var mouse_x = Input.GetAxis("Mouse X");//获取鼠标X轴移动
         var mouse_y = -Input.GetAxis("Mouse Y");//获取鼠标Y轴移动
       
         if (Input.GetKey(KeyCode.Mouse2))
         {
-            transform.Translate(Vector3.left * (mouse_x * rotateSpeed) * Time.deltaTime);
-            transform.Translate(Vector3.up * (mouse_y * rotateSpeed) * Time.deltaTime);
+           
+            transform.Translate(Vector3.left * (mouse_x * translateSpeed) * Time.deltaTime);
+            transform.Translate(Vector3.up * (mouse_y * translateSpeed) * Time.deltaTime);
         }
     }
 
-    private void cameraTranslate() //摄像机中键平移
+    private void cameraRotate() //摄像机中键平移
     {
         var mouse_x = Input.GetAxis("Mouse X");//获取鼠标X轴移动
         var mouse_y = -Input.GetAxis("Mouse Y");//获取鼠标Y轴移动
 
         if (Input.GetKey(KeyCode.Mouse1))
         {
-            transform.RotateAround(new Vector3(0,0,0), Vector3.up, mouse_x * translateSpeed);
-            transform.RotateAround(new Vector3(0, 0, 0), transform.right, mouse_y * translateSpeed);
+            transform.RotateAround(new Vector3(0,0,0), Vector3.up, mouse_x * rotateSpeed);
+            transform.RotateAround(new Vector3(0, 0, 0), transform.right, mouse_y * rotateSpeed);
         }
     }
+
+
 
     private void cameraZoom() //摄像机滚轮缩放
     {
@@ -184,6 +205,8 @@ this.transform.Rotate(Vector3.up * rotateSpeed); //绕上方轴旋转
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
             transform.Translate(Vector3.forward * -1 * zoomSpeed);
     }
+
+}
 ```
 
 
@@ -206,3 +229,45 @@ this.transform.Rotate(Vector3.up * rotateSpeed); //绕上方轴旋转
 Instantiate(gameObject, position, gameobject.transform.rotation); 
 ```
 
+
+
+
+
+
+
+
+
+## 八、创建视频播放器
+
+参考教程：[[Unity3D学习（十）：使用VideoPlayer在UI上播放视频](https://www.cnblogs.com/0kk470/p/10637034.html)]()
+
+>**实验步骤
+>1. 创建RawImage,创建一个RenderTexture，并且赋给RawImage
+>2. 在创建好的RawImage上挂载一个VideoPlayer脚本，Render Mode选择Render Texture。
+>3. 将视频导入项目，挂载到Video Clip上面
+>4. 创建播放键，进度条UI
+>5. 代码实现UI控制视频
+```C#
+video.GetComponent<UnityEngine.Video.VideoPlayer>().Pause();//暂停
+video.GetComponent<UnityEngine.Video.VideoPlayer>().Play();//播放
+
+Slider slider = video.GetComponent<Slider>();
+UnityEngine.Video.VideoPlayer v = video.GetComponent<UnityEngine.Video.VideoPlayer>();
+slider.value = (float)(v.time / v.clip.length); //实时更新进度条
+
+//拖拽进度条改变视频进度
+public class SliderEvent : MonoBehaviour,IDragHandler
+{
+    public GameObject slider;
+    public GameObject video;
+    public void OnDrag(PointerEventData eventData)
+    {
+        video.GetComponent<VideoPlayer>().time = slider.GetComponent<Slider>().value * video.GetComponent<VideoPlayer>().clip.length;
+    }
+}
+ 
+
+```
+实现效果：
+
+![10](ReadMeImage/gif/10.gif)

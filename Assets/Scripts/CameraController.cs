@@ -24,7 +24,7 @@ public class CameraController: MonoBehaviour
     }
 
 
-    private void cameraRotate() //摄像机右键旋转
+    private void cameraTranslate() //摄像机右键旋转
     {
        
         var mouse_x = Input.GetAxis("Mouse X");//获取鼠标X轴移动
@@ -32,20 +32,20 @@ public class CameraController: MonoBehaviour
       
         if (Input.GetKey(KeyCode.Mouse2))
         {
-            transform.Translate(Vector3.left * (mouse_x * rotateSpeed) * Time.deltaTime);
-            transform.Translate(Vector3.up * (mouse_y * rotateSpeed) * Time.deltaTime);
+            transform.Translate(Vector3.left * (mouse_x * translateSpeed) * Time.deltaTime);
+            transform.Translate(Vector3.up * (mouse_y * translateSpeed) * Time.deltaTime);
         }
     }
 
-    private void cameraTranslate() //摄像机中键平移
+    private void cameraRotate() //摄像机中键平移
     {
         var mouse_x = Input.GetAxis("Mouse X");//获取鼠标X轴移动
         var mouse_y = -Input.GetAxis("Mouse Y");//获取鼠标Y轴移动
 
         if (Input.GetKey(KeyCode.Mouse1))
         {
-            transform.RotateAround(new Vector3(0,0,0), Vector3.up, mouse_x * translateSpeed);
-            transform.RotateAround(new Vector3(0, 0, 0), transform.right, mouse_y * translateSpeed);
+            transform.RotateAround(new Vector3(0,0,0), Vector3.up, mouse_x * rotateSpeed);
+            transform.RotateAround(new Vector3(0, 0, 0), transform.right, mouse_y * rotateSpeed);
         }
     }
 
