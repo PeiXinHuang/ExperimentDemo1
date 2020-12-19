@@ -309,7 +309,7 @@ public class SenceController : MonoBehaviour
             image.GetComponent<Image>().sprite = Resources.Load("cellImg/cell2", typeof(Sprite)) as Sprite;
             LeanTween.alpha(image.GetComponent<RectTransform>(), 0.0f, 0);
             LeanTween.alpha(image.GetComponent<RectTransform>(), 1.0f, 1.0f);
-            microscope.transform.GetChild(0).GetComponent<Animation>().Play("ani1");
+            microscope.transform.GetChild(0).GetChild(0).GetComponent<Animation>().Play("ani1");
         }
         else if (microscopeDirection == 1)
         {
@@ -318,13 +318,13 @@ public class SenceController : MonoBehaviour
             image.GetComponent<Image>().sprite = Resources.Load("cellImg/cell1", typeof(Sprite)) as Sprite;
             LeanTween.alpha(image.GetComponent<RectTransform>(), 0.0f, 0);
             LeanTween.alpha(image.GetComponent<RectTransform>(), 1.0f, 1.0f);
-            microscope.transform.GetChild(0).GetComponent<Animation>().Play("ani2");
+            microscope.transform.GetChild(0).GetChild(0).GetComponent<Animation>().Play("ani2");
         }
         else if (microscopeDirection == 2)
         {
             microscopeDirection = 0;
             image.GetComponent<Image>().sprite = Resources.Load("cellImg/cell3", typeof(Sprite)) as Sprite;
-            microscope.transform.GetChild(0).GetComponent<Animation>().Play("ani3");
+            microscope.transform.GetChild(0).GetChild(0).GetComponent<Animation>().Play("ani3");
         }
 
     }
