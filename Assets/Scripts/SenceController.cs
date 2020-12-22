@@ -349,7 +349,9 @@ public class SenceController : MonoBehaviour
     {
         if (!guide.activeInHierarchy)
         {
+            guide.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             guide.SetActive(true);
+            LeanTween.scale(guide.gameObject, new Vector3(1, 1, 1), 0.5f).setEaseOutBack();
             Button btn = guide.transform.GetChild(0).GetComponent<Button>();
             btn.Select();
             CloseVideo();
@@ -372,6 +374,8 @@ public class SenceController : MonoBehaviour
     {
         if (!video.activeInHierarchy)
         {
+            video.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            LeanTween.scale(video.gameObject, new Vector3(1, 1, 1), 0.5f).setEaseOutBack();
             video.SetActive(true);
             CloseGuidePanel();
             
